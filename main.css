@@ -11426,19 +11426,18 @@ section.resume-section .resume-section-content {
 
 }
 nav {
-  position: fixed;
+  position:fixed;
   left: 0;
   top: 0;
   width: 200px;
   height: 100%;
   background-color: #bd5d38;
   padding-bottom: 100px;
-  padding-top: 400px;
+  padding-top: 200px;
   padding-left: 40px;
   font-family: "Saira Extra Condensed", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   font-weight: 700;
   font-size: 20px;
-
 }
 
 nav ul {
@@ -11448,6 +11447,7 @@ nav ul {
 }
 
 nav li {
+  display: inline-block;
   margin: 10px 0;
 }
 
@@ -11456,6 +11456,46 @@ nav a {
   padding: 10px;
   color: #fff;
   text-decoration: none;
+}
+
+.navbar li a:hover {
+  background-color: #555;
+}
+
+.image-grid {
+	--gap: 16px;
+	--num-cols: 4;
+	--row-height: 300px;
+
+	box-sizing: border-box;
+	padding: var(--gap);
+
+	display: grid;
+	grid-template-columns: repeat(var(--num-cols), 1fr);
+	grid-auto-rows: var(--row-height);
+	gap: var(--gap);
+}
+
+.image-grid>img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+}
+
+.image-grid-col-2 {
+	grid-column: span 2;
+}
+
+.image-grid-row-2 {
+	grid-row: span 2;
+}
+
+/* Anything udner 1024px */
+@media screen and (max-width: 1024px) {
+	.image-grid {
+		--num-cols: 2;
+		--row-height: 200px;
+	}
 }
 
 
